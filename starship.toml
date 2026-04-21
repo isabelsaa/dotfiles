@@ -1,0 +1,89 @@
+# 🌙 Mermaid Nocturna Prompt
+# Tema oscuro inspirado en el océano profundo — elegante, mágico y femenino 🧜‍♀️
+
+add_newline = true
+palette = "mermaid_night"
+
+format = """
+$directory$git_branch$git_status$nodejs$php$python$docker_context$cmd_duration
+$character
+"""
+
+# 🌌 Paleta de colores
+[palettes.mermaid_night]
+deepblue = "#0A0F24"
+seafoam = "#78DEC7"
+coral = "#FF85A1"
+lavender = "#CFA0E9"
+teal = "#4CD1C0"
+shell = "#FFD1DC"
+abyss = "#1E1A3A"
+
+[status]
+disabled = false
+style = "bold coral"
+symbol = "💔 "
+format = "[$symbol$status]($style) "
+
+# 📂 Directorio actual
+[directory]
+style = "bold seafoam"
+read_only = "🔒"
+truncation_length = 2
+truncate_to_repo = true
+truncation_symbol = "🐚…/"
+format = "[$path]($style) "
+
+# 🌸 Rama Git
+[git_branch]
+symbol = "🌺 "
+style = "lavender"
+format = "on [$symbol$branch]($style) "
+
+# 💫 Estado Git
+[git_status]
+style = "coral"
+format = "[$all_status$ahead_behind]($style) "
+staged = "✔ "
+modified = "✚ "
+untracked = "… "
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+
+# 🪸 Node.js
+[nodejs]
+symbol = "🪸 "
+style = "teal"
+format = "via [$symbol$version]($style) "
+
+# 🐚 PHP
+[php]
+symbol = "🐚 "
+style = "coral"
+format = "via [$symbol$version]($style) "
+
+# 🐠 Python
+[python]
+symbol = "🐠 "
+style = "seafoam"
+format = "via [$symbol$version]($style) "
+
+# 🐳 Docker
+[docker_context]
+symbol = "🐳 "
+style = "lavender"
+format = "in [$symbol$context]($style) "
+
+# ⏱️ Duración del comando
+[cmd_duration]
+min_time = 500
+format = "⏱️ [$duration]($style) "
+style = "bold shell"
+
+# 💖 Símbolos del prompt
+[character]
+success_symbol = "[🧜‍♀️](bold seafoam)"
+error_symbol = "[💔](bold coral)"
+vicmd_symbol = "[🐚](bold lavender)"
+format = "$symbol "
